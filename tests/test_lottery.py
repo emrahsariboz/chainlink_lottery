@@ -16,19 +16,6 @@ from web3 import Web3
 import time
 
 
-@pytest.fixture()
-def lottery():
-    print("Testing...")
-    if network.show_active() not in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
-        pytest.skip()
-    print("Deploying Smart Contract...")
-    lottery = deploy_lottery()
-
-    account = get_account()
-
-    return (lottery, account)
-
-
 def test_get_entract_fee(lottery):
 
     lottery, account = lottery

@@ -11,7 +11,7 @@ from scripts.helpful_scripts import (
 from scripts.deploy import deploy_lottery
 
 
-@pytest.mark.skip()
+@pytest.mark.require_network("rinkeby")
 def test_can_pick_winner():
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
         pytest.skip()
